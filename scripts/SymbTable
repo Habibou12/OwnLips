@@ -1,0 +1,13 @@
+class SymbTable:
+    def __init__(self):
+        self.symbol = {}
+        self.initsymbol()
+        self.start = 16
+    def initsymbol(self):
+        for i in range(16):
+            self.symbol['R' + str(i)] = i
+        self.symbol['SCREEN'] = 16384
+        self.symbol['KBD'] = 25476
+    def addsymbol(self, symbol, value):
+        self.symbol[symbol] = value
+        return value
